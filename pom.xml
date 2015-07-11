@@ -1,0 +1,439 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.iservport</groupId>
+    <artifactId>iservport-trendlib</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+  
+    <name>araucaria</name>
+  
+    <description>Aplicativo de controle para o projeto TrendLib</description>
+  
+	<licenses>
+		<license>
+			<name>Todos os direitos reservados a iServ Consultoria Empresarial Ltda.</name>
+		</license>
+	</licenses>
+
+	<inceptionYear>2015</inceptionYear>
+	
+	<developers>
+		<developer>
+			<id>mauricio</id>
+			<name>Maurício Fernandes de Castro</name>
+			<email>mauricio at iservport dot com</email>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+	
+	<properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-security.version>3.2.3.RELEASE</spring-security.version>
+    	<spring-social.version>1.1.0.RELEASE</spring-social.version>
+    	<org.aspectj-version>1.8.1</org.aspectj-version>
+ 		<helianto.version>0.4.4-SNAPSHOT</helianto.version>
+		<iservport.version>1.2-SNAPSHOT</iservport.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		
+		<!-- Apache Commons Upload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>  
+ 	
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+				
+		<!-- 
+		 ! AspectJ
+		 ! -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		
+		<!-- 
+		 ! Webjars
+		 ! -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>2.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery-validation</artifactId>
+		    <version>1.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery-knob</artifactId>
+		    <version>1.2.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>morrisjs</artifactId>
+		    <version>0.5.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>flot</artifactId>
+		    <version>0.8.0-1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>dropzone</artifactId>
+		    <version>3.7.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>chosen</artifactId>
+		    <version>0.9.12</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>fullcalendar</artifactId>
+		    <version>1.6.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap-datepicker</artifactId>
+		    <version>1.3.0-3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>font-awesome</artifactId>
+		    <version>4.3.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.webjars</groupId>
+					<artifactId>bootstrap</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>ionicons</artifactId>
+		    <version>1.5.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>foundation-icon-fonts</artifactId>
+		    <version>d596a3cfb3</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.webjars</groupId>
+		    <artifactId>jquery-cookie</artifactId>
+		    <version>1.4.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>angular-ui-bootstrap</artifactId>
+		    <version>0.11.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>angularjs</artifactId>
+		    <version>1.3.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>angular-ui-utils</artifactId>
+		    <version>0.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery.inputmask</artifactId>
+		    <version>3.1.0</version>
+		</dependency>		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>json3</artifactId>
+		    <version>3.3.2-1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>nervgh-angular-file-upload</artifactId>
+		    <version>1.1.5-1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>angular-loading-bar</artifactId>
+		    <version>0.7.1</version>
+		</dependency>
+		
+		<!-- 
+		 ! Iservport
+		 ! -->
+			
+   		<dependency>
+			<groupId>com.iservport</groupId>
+			<artifactId>iservport-home</artifactId>
+			<version>${iservport.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.iservport</groupId>
+  					<artifactId>iservport-plan</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.helianto</groupId>
+  					<artifactId>helianto-query</artifactId>
+				</exclusion>
+				<exclusion>
+				    <groupId>com.mangofactory</groupId>
+				    <artifactId>swagger-springmvc</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.dataformat</groupId>
+					<artifactId>jackson-dataformat-xml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+   		<dependency>
+			<groupId>com.iservport</groupId>
+			<artifactId>iservport-action</artifactId>
+			<version>${iservport.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.iservport</groupId>
+  					<artifactId>iservport-plan</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.helianto</groupId>
+  					<artifactId>helianto-query</artifactId>
+				</exclusion>
+				<exclusion>
+				    <groupId>com.mangofactory</groupId>
+				    <artifactId>swagger-springmvc</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.dataformat</groupId>
+					<artifactId>jackson-dataformat-xml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- 
+		 ! Helianto
+		 ! -->
+			
+		<dependency>
+			<groupId>org.helianto</groupId>
+			<artifactId>helianto-sendgrid</artifactId>
+			<version>${helianto.version}</version>
+		</dependency>
+		
+   		<dependency>
+   			<groupId>org.helianto</groupId>
+   			<artifactId>helianto-security</artifactId>
+   			<version>${helianto.version}</version>
+   		</dependency>
+   		
+   		<dependency>
+   			<groupId>org.helianto</groupId>
+   			<artifactId>helianto-plan</artifactId>
+   			<version>${helianto.version}</version>
+   		</dependency>
+   		
+		<!-- 
+		 ! Spring
+		 ! -->
+			
+		
+   		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-core</artifactId>
+			<version>${spring-social.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-web</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.22</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>18.0</version>
+		</dependency>
+
+	</dependencies>
+	
+	<build>
+		<finalName>araucaria</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<warSourceDirectory>webapp</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.15</version>
+				<configuration>
+					<skip>false</skip>
+					<forkMode>once</forkMode>
+					<testFailureIgnore>false</testFailureIgnore>
+					<includes>
+						<include implementation="java.lang.String">**/*Tests.class
+						</include>
+					</includes>
+					<excludes>
+						<exclude implementation="java.lang.String">**/Abstract*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<!-- 
+				Unpack webjar dependencies to the /target/dependency folder for use 
+				by the CI Karma configuration. 
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includes>**/*.js</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>-->
+    	</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>
+												unpack-dependencies
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<repositories>
+	
+	    <repository>
+	        <id>spring-milestones</id>
+	        <name>Spring Milestones</name>
+	        <url>http://repo.spring.io/milestone</url>
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	    </repository>
+	    
+    	<repository>
+			<id>helianto-release</id>
+			<name>Helianto releases</name>
+			<url>http://s3-sa-east-1.amazonaws.com/maven.helianto.org/release</url>
+		</repository>
+		
+		<repository>
+			<id>helianto-snapshot</id>
+			<name>Helianto snapshots</name>
+			<url>http://s3-sa-east-1.amazonaws.com/maven.helianto.org/snapshot</url>
+		</repository>
+				
+		<repository>
+			<id>iservport-release</id>
+			<name>Iservport releases</name>
+			<url>http://s3-sa-east-1.amazonaws.com/maven.iservport.com/release</url>
+		</repository>
+		
+		<repository>
+			<id>iservport-snapshot</id>
+			<name>Iservport snapshots</name>
+			<url>http://s3-sa-east-1.amazonaws.com/maven.iservport.com/snapshot</url>
+		</repository>
+		
+	</repositories>
+
+</project>
